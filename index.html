@@ -1,1 +1,55 @@
-<head><title>MaFFaKa</title><h1><center>MaFFaKa:<br><iframe width=786 height=402 src=https://www.youtube.com/embed/XEny5TeLK88 allowfullscreen></iframe><br><br>DeCody:<br><iframe width=786 height=402 src=https://www.youtube.com/embed/A2uMO9DmKqE allowfullscreen></iframe><br><br>WarGack:<br><iframe width=786 height=402 src=https://www.youtube.com/embed/nIbvJmRLRjM allowfullscreen></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Обращение MaFFaKa</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  #video-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+  }
+  #play-button {
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div id="video-container">
+  <video id="video" width="100%">
+    <source src="maffaka.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<img id="play-button" src="preview.png" alt="Play Video">
+
+<script>
+  const videoContainer = document.getElementById('video-container');
+  const video = document.getElementById('video');
+  const playButton = document.getElementById('play-button');
+
+  playButton.addEventListener('click', () => {
+    video.play();
+    videoContainer.style.display = 'block';
+    playButton.style.display = 'none';
+  });
+
+  video.addEventListener('ended', () => {
+    window.location.href = 'https://discord.gg/JSTbZyUpWh';
+  });
+</script>
+</body>
+</html>
